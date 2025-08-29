@@ -5,36 +5,315 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pet Courier</title>
     <meta name="theme-color" content="#5D5CDE">
-    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiVGhlIFBldCBDb3VyaWVyIiwic2hvcnRfbmFtZSI6IlBldCBDb3VyaWVyIiwic3RhcnRfdXJsIjoiLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmZmZmZmYiLCJ0aGVtZV9jb2xvciI6IiM1RDVDREUiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lpSUhacFpYZENiM2c5SWpBZ01DQXhNamd1TURBd01EQWdNVEk0TGpBd01EQTFJR1pwYkd3OUltTjFjbkpsYm5SRGIyeHZjaUlnZUcxc2JuTTlJbWgwZEhBNkx5OTNkM2N1ZHpNdWIzSm5Mekl3TURBdmMzWm5JajQ4Y21WamRDQjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ1ptbHNiRDBpSXpWRU5VTkVSU0krUEM5eVpXTjBQZ285YzNaaFBrNXVjM1JoY25RZ0lEZGtNeXd6SWpvZ01UUWlQand2ZEdWNGRENDhMMTkyWno0PSIsInNpemVzIjoiMTI4eDEyOCIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiVGhlIFBldCBDb3VyaWVyIiwic2hvcnRfbmFtZSI6IlBldCBDb3VyaWVyIiwic3RhcnRfdXJsIjoiLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmZmZmZmYiLCJ0aGVtZV9jb2xvciI6IiM1RDVDREUiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lpSUhacFpYZENiM2c5SWpBZ01DQXhNamd1TURBd01EQWdNVEk0TGpBd01EQTBJR1pwYkd3OUltTjFjbkpsYm5SRGIyeHZjaUlnZUcxc2JuTTlJbWgwZEhBNkx5OTNkM2N1ZHpNdWIzSm5Mekl3TURBdmMzWm5JajQ4Y21WamRDQjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ1ptbHNiRDBpSXpWRU5VTkVSU0krUEM5eVpXTjBQZ285YzNaaFBrNXVjM1JoY25RZ0lEZGtNeXd6SWpvZ01UUWlQand2ZEdWNGRENDhMMTkyWno0PSIsInNpemVzIjoiMTI4eDEyOCIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
+</head>
+<body style="margin:0; padding:0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #ffffff;
-            color: #111827;
-            min-height: 100vh;
-            line-height: 1.5;
-        }
+    <!-- Header -->
+    <div style="background: white; padding: 15px; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100;">
+        <div style="max-width: 400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="background: #5D5CDE; width: 35px; height: 35px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">🐾</div>
+                <h1 style="margin: 0; font-size: 20px; color: #333;">The Pet Courier</h1>
+            </div>
+            <button onclick="showCart()" style="background: none; border: none; font-size: 24px; cursor: pointer; position: relative;">
+                🛒
+                <span id="cartCount" style="position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: none; align-items: center; justify-content: center;">0</span>
+            </button>
+        </div>
+    </div>
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #111827;
-                color: #f9fafb;
+    <!-- Main Content -->
+    <div style="max-width: 400px; margin: 0 auto; padding: 20px;">
+        
+        <!-- Welcome -->
+        <div style="margin-bottom: 30px;">
+            <h2 style="margin: 0 0 10px 0; color: #333;">Your Pet Care Partner</h2>
+            <p style="margin: 0; color: #666;">Quality products, professional walks, and same-day delivery for your furry friends</p>
+        </div>
+
+        <!-- Categories -->
+        
+        <!-- Pet Products -->
+        <div style="background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <button onclick="toggleCategory('products')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span style="font-size: 24px;">🛍️</span>
+                    <div style="text-align: left;">
+                        <div style="font-weight: bold; font-size: 16px; color: #333;">Pet Products</div>
+                        <div style="font-size: 14px; color: #666;">Food, toys, and gear for your pets</div>
+                    </div>
+                </div>
+                <span id="productsArrow" style="font-size: 20px; transition: transform 0.3s;">▼</span>
+            </button>
+            <div id="productsContent" style="display: none; padding: 0 20px 20px;">
+                
+                <!-- Pet Food -->
+                <div style="margin-bottom: 20px;">
+                    <h4 style="margin: 0 0 10px 0; color: #333;">Pet Food</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button onclick="addToCart('Beef Pet Food', 15.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Beef</div>
+                            <div style="color: #666; font-size: 14px;">$15.99</div>
+                        </button>
+                        <button onclick="addToCart('Fish Pet Food', 17.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Fish</div>
+                            <div style="color: #666; font-size: 14px;">$17.99</div>
+                        </button>
+                        <button onclick="addToCart('Gluten Free Pet Food', 19.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Gluten Free</div>
+                            <div style="color: #666; font-size: 14px;">$19.99</div>
+                        </button>
+                        <button onclick="addToCart('Chicken Pet Food', 14.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Chicken</div>
+                            <div style="color: #666; font-size: 14px;">$14.99</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pet Toys -->
+                <div style="margin-bottom: 20px;">
+                    <h4 style="margin: 0 0 10px 0; color: #333;">Pet Toys</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button onclick="addToCart('Chew Toys', 8.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Chew Toys</div>
+                            <div style="color: #666; font-size: 14px;">$8.99</div>
+                        </button>
+                        <button onclick="addToCart('Soft Plushies', 12.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Soft Plushies</div>
+                            <div style="color: #666; font-size: 14px;">$12.99</div>
+                        </button>
+                        <button onclick="addToCart('Rope Toys', 6.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Ropes</div>
+                            <div style="color: #666; font-size: 14px;">$6.99</div>
+                        </button>
+                        <button onclick="addToCart('Balls', 5.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Balls</div>
+                            <div style="color: #666; font-size: 14px;">$5.99</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pet Gear -->
+                <div>
+                    <h4 style="margin: 0 0 10px 0; color: #333;">Pet Gear</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button onclick="addToCart('Leashes', 18.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Leashes</div>
+                            <div style="color: #666; font-size: 14px;">$18.99</div>
+                        </button>
+                        <button onclick="addToCart('Harnesses', 24.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Harnesses</div>
+                            <div style="color: #666; font-size: 14px;">$24.99</div>
+                        </button>
+                        <button onclick="addToCart('Pet Gear', 15.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Pet Gear</div>
+                            <div style="color: #666; font-size: 14px;">$15.99</div>
+                        </button>
+                        <button onclick="addToCart('Grooming Products', 22.99)" style="padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                            <div style="font-weight: 500;">Grooming Products</div>
+                            <div style="color: #666; font-size: 14px;">$22.99</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule a Walk -->
+        <div style="background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <button onclick="toggleCategory('walk')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span style="font-size: 24px;">🚶</span>
+                    <div style="text-align: left;">
+                        <div style="font-weight: bold; font-size: 16px; color: #333;">Schedule a Walk</div>
+                        <div style="font-size: 14px; color: #666;">Professional dog walking services</div>
+                    </div>
+                </div>
+                <span id="walkArrow" style="font-size: 20px; transition: transform 0.3s;">▼</span>
+            </button>
+            <div id="walkContent" style="display: none; padding: 0 20px 20px;">
+                <button onclick="addToCart('30 Minute Walk', 20.00)" style="width: 100%; padding: 20px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left; margin-bottom: 10px;">
+                    <div style="font-weight: 500; margin-bottom: 5px;">30 Minute Walk</div>
+                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">Includes cool down period, refreshing water, and bathroom break</div>
+                    <div style="font-weight: bold; color: #5D5CDE;">$20.00</div>
+                </button>
+                <button onclick="addToCart('Same Day Walk', 30.00)" style="width: 100%; padding: 20px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                    <div style="font-weight: 500; margin-bottom: 5px;">Same Day Walk</div>
+                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">No appointment necessary</div>
+                    <div style="font-weight: bold; color: #5D5CDE;">$30.00</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Schedule Same Day Delivery -->
+        <div style="background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <button onclick="toggleCategory('delivery')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span style="font-size: 24px;">🚚</span>
+                    <div style="text-align: left;">
+                        <div style="font-weight: bold; font-size: 16px; color: #333;">Schedule Same Day Delivery</div>
+                        <div style="font-size: 14px; color: #666;">Fast delivery for your pet needs</div>
+                    </div>
+                </div>
+                <span id="deliveryArrow" style="font-size: 20px; transition: transform 0.3s;">▼</span>
+            </button>
+            <div id="deliveryContent" style="display: none; padding: 0 20px 20px;">
+                <button onclick="addToCart('Same Day Delivery Fee', 10.00)" style="width: 100%; padding: 20px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left; margin-bottom: 10px;">
+                    <div style="font-weight: 500; margin-bottom: 5px;">Same Day Delivery</div>
+                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">Delivery fee</div>
+                    <div style="font-weight: bold; color: #5D5CDE;">$10.00</div>
+                </button>
+                <button onclick="addToCart('Heavy Item Fee', 10.00)" style="width: 100%; padding: 20px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left;">
+                    <div style="font-weight: 500; margin-bottom: 5px;">Heavy Item Fee</div>
+                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">For anything over 50lbs (additional fee)</div>
+                    <div style="font-weight: bold; color: #5D5CDE;">$10.00</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: none; align-items: flex-end;">
+        <div style="background: white; width: 100%; max-width: 400px; margin: 0 auto; border-radius: 20px 20px 0 0; max-height: 80vh; overflow-y: auto;">
+            <div style="padding: 20px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0;">Your Cart</h3>
+                <button onclick="closeCart()" style="background: none; border: none; font-size: 24px; cursor: pointer;">✖️</button>
+            </div>
+            <div id="cartItems" style="padding: 20px;">
+                <p style="text-align: center; color: #666;">Your cart is empty</p>
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #ddd;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <span style="font-size: 18px; font-weight: bold;">Total:</span>
+                    <span id="cartTotal" style="font-size: 18px; font-weight: bold; color: #5D5CDE;">$0.00</span>
+                </div>
+                <button onclick="checkout()" style="width: 100%; padding: 15px; background: #5D5CDE; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" style="position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px 20px; border-radius: 8px; z-index: 2000; display: none;">
+        Item added to cart!
+    </div>
+
+    <script>
+        let cart = [];
+
+        function toggleCategory(category) {
+            const content = document.getElementById(category + 'Content');
+            const arrow = document.getElementById(category + 'Arrow');
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
             }
         }
 
-        .header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 40;
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name: name, price: price, quantity: 1 });
+            }
+            
+            updateCartDisplay();
+            showToast();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            if (totalItems > 0) {
+                cartCount.style.display = 'flex';
+                cartCount.textContent = totalItems;
+            } else {
+                cartCount.style.display = 'none';
+            }
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: #666;">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map((item, index) => `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee;">
+                        <div>
+                            <div style="font-weight: 500;">${item.name}</div>
+                            <div style="color: #666; font-size: 14px;">$${item.price.toFixed(2)} each</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <button onclick="updateQuantity(${index}, -1)" style="width: 30px; height: 30px; border-radius: 50%; background: #f0f0f0; border: none; cursor: pointer;">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity(${index}, 1)" style="width: 30px; height: 30px; border-radius: 50%; background: #f0f0f0; border: none; cursor: pointer;">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            cartTotal.textContent = '$' + totalPrice.toFixed(2);
+        }
+
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartDisplay();
+        }
+
+        function showCart() {
+            document.getElementById('cartModal').style.display = 'flex';
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            
+            const orderSummary = cart.map(item => 
+                `${item.quantity}x ${item.name} ($${item.price.toFixed(2)} each)`
+            ).join('\n');
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            // Simple confirmation
+            if (window.confirm) {
+                window.confirm('Order Confirmed!\n\n' + orderSummary + '\n\nTotal: $' + total.toFixed(2));
+            }
+            
+            cart = [];
+            updateCartDisplay();
+            closeCart();
+        }
+
+        // PWA Installation
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            const installBtn = document.createElement('div');
+              z-index: 40;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
