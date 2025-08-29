@@ -79,6 +79,283 @@
         <!-- Categories -->
         <div class="space-y-4">
             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <button data-category="petProducts" class="category-toggle w-full p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">🛍️</span>
+                        <div class="text-left">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Pet Products</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Food, toys, and gear for your pets</p>
+                        </div>
+                    </div>
+                    <svg id="petProductsIcon" class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="petProductsContent" class="hidden">
+                    <!-- Pet Food Section -->
+                    <div class="px-4 pb-2">
+                        <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">Pet Food</h4>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <button data-item="Beef Pet Food" data-price="15.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Beef</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$15.99</div>
+                            </button>
+                            <button data-item="Fish Pet Food" data-price="17.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Fish</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$17.99</div>
+                            </button>
+                            <button data-item="Gluten Free Pet Food" data-price="19.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Gluten Free</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$19.99</div>
+                            </button>
+                            <button data-item="Chicken Pet Food" data-price="14.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Chicken</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$14.99</div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Toys Section -->
+                    <div class="px-4 pb-2">
+                        <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">Pet Toys</h4>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <button data-item="Chew Toys" data-price="8.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Chew Toys</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$8.99</div>
+                            </button>
+                            <button data-item="Soft Plushies" data-price="12.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Soft Plushies</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$12.99</div>
+                            </button>
+                            <button data-item="Rope Toys" data-price="6.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Ropes</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$6.99</div>
+                            </button>
+                            <button data-item="Balls" data-price="5.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Balls</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$5.99</div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Pet Gear Section -->
+                    <div class="px-4 pb-4">
+                        <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">Pet Gear</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button data-item="Leashes" data-price="18.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Leashes</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$18.99</div>
+                            </button>
+                            <button data-item="Harnesses" data-price="24.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Harnesses</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$24.99</div>
+                            </button>
+                            <button data-item="Pet Gear" data-price="15.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Pet Gear</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$15.99</div>
+                            </button>
+                            <button data-item="Grooming Products" data-price="22.99" class="add-to-cart p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                                <div class="font-medium text-sm">Grooming Products</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">$22.99</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <button data-category="scheduleWalk" class="category-toggle w-full p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">🚶</span>
+                        <div class="text-left">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Schedule a Walk</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Professional dog walking services</p>
+                        </div>
+                    </div>
+                    <svg id="scheduleWalkIcon" class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="scheduleWalkContent" class="hidden">
+                    <div class="p-4 space-y-3">
+                        <button data-item="30 Minute Walk" data-price="20.00" class="add-to-cart w-full p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                            <div class="font-medium text-sm mb-1">30 Minute Walk</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">Includes cool down period, refreshing water, and bathroom break</div>
+                            <div class="text-sm font-semibold">$20.00</div>
+                        </button>
+                        <button data-item="Same Day Walk" data-price="30.00" class="add-to-cart w-full p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                            <div class="font-medium text-sm mb-1">Same Day Walk</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">No appointment necessary</div>
+                            <div class="text-sm font-semibold">$30.00</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <button data-category="delivery" class="category-toggle w-full p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">🚚</span>
+                        <div class="text-left">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Schedule Same Day Delivery</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Fast delivery for your pet needs</p>
+                        </div>
+                    </div>
+                    <svg id="deliveryIcon" class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="deliveryContent" class="hidden">
+                    <div class="p-4 space-y-3">
+                        <button data-item="Same Day Delivery Fee" data-price="10.00" class="add-to-cart w-full p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                            <div class="font-medium text-sm mb-1">Same Day Delivery</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">Delivery fee</div>
+                            <div class="text-sm font-semibold">$10.00</div>
+                        </button>
+                        <button data-item="Heavy Item Fee" data-price="10.00" class="add-to-cart w-full p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors text-left">
+                            <div class="font-medium text-sm mb-1">Heavy Item Fee</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">For anything over 50lbs (additional fee)</div>
+                            <div class="text-sm font-semibold">$10.00</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-end">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-md mx-auto rounded-t-xl slide-up">
+            <div class="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Your Cart</h3>
+                <button id="closeCartButton" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="cartItems" class="max-h-64 overflow-y-auto">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">Total:</span>
+                    <span id="cartTotal" class="text-lg font-bold text-primary">$0.00</span>
+                </div>
+                <button id="checkoutButton" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg hidden z-50 fade-in">
+        Item added to cart!
+    </div>
+
+    <script>
+        // Dark mode handling
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        let cart = [];
+        let cartTotal = 0;
+
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Category toggle functionality
+            document.querySelectorAll('.category-toggle').forEach(button => {
+                button.addEventListener('click', function() {
+                    const categoryId = this.getAttribute('data-category');
+                    toggleCategory(categoryId);
+                });
+            });
+
+            // Add to cart functionality
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemName = this.getAttribute('data-item');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    addToCart(itemName, price);
+                });
+            });
+
+            // Cart button
+            document.getElementById('cartButton').addEventListener('click', showCart);
+            
+            // Close cart button
+            document.getElementById('closeCartButton').addEventListener('click', closeCart);
+            
+            // Checkout button
+            document.getElementById('checkoutButton').addEventListener('click', checkout);
+            
+            // Close cart when clicking outside
+            document.getElementById('cartModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeCart();
+                }
+            });
+
+            // PWA Installation
+            let deferredPrompt;
+            let installButton;
+
+            // Show install prompt for PWA
+            window.addEventListener('beforeinstal            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40">
+        <div class="max-w-md mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center smooth-bounce">
+                        <span class="text-white font-bold text-lg">🐾</span>
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-900 dark:text-white">The Pet Courier</h1>
+                </div>
+                <button id="cartButton" class="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l1.5-6m5.5 0v6m0-6h2m-2 0V7a2 2 0 114 0v0"></path>
+                    </svg>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-md mx-auto px-4 pb-20">
+        <!-- Welcome Section -->
+        <div class="py-6">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Your Pet Care Partner</h2>
+            <p class="text-gray-600 dark:text-gray-300">Quality products, professional walks, and same-day delivery for your furry friends</p>
+        </div>
+
+        <!-- Categories -->
+        <div class="space-y-4">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
                 <button onclick="toggleCategory('petProducts')" class="w-full p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                     <div class="flex items-center space-x-3">
                         <span class="text-2xl">🛍️</span>
