@@ -389,6 +389,361 @@
     });
   </script>
 </body>
+</html>  <div class="header">
+    <div class="header-inner">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="logo">🐾</div>
+        <h1 style="margin:0; font-size:20px; color:#333;">The Pet Courier</h1>
+      </div>
+      <button id="cartButton" class="btn-ghost" aria-label="Open cart" style="font-size:24px; position:relative;">
+        🛒
+        <span id="cartCount" style="position:absolute; top:-5px; right:-5px; background:red; color:white; border-radius:50%; width:20px; height:20px; font-size:12px; display:none; align-items:center; justify-content:center;">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="container">
+
+    <!-- Welcome -->
+    <div style="margin-bottom:30px;">
+      <h2 class="section-title">Your Pet Care Partner</h2>
+      <p style="margin:0; color:#666;">Quality products, professional walks, and same-day delivery for your furry friends</p>
+    </div>
+
+    <!-- Pet Products -->
+    <div class="card">
+      <button class="accordion-btn" data-target="products">
+        <div style="display:flex; align-items:center; gap:15px;">
+          <span style="font-size:24px;">🛍️</span>
+          <div style="text-align:left;">
+            <div style="font-weight:bold; font-size:16px; color:#333;">Pet Products</div>
+            <div style="font-size:14px; color:#666;">Food, toys, and gear for your pets</div>
+          </div>
+        </div>
+        <span class="arrow" id="productsArrow">▼</span>
+      </button>
+
+      <div id="productsContent" class="accordion-content">
+        <!-- Pet Food -->
+        <div style="margin-bottom:20px;">
+          <h4 style="margin:0 0 10px 0; color:#333;">Pet Food</h4>
+          <div class="grid">
+            <button class="btn-product add-to-cart" data-name="Beef Pet Food" data-price="15.99">
+              <div style="font-weight:500;">Beef</div>
+              <div style="color:#666; font-size:14px;">$15.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Fish Pet Food" data-price="17.99">
+              <div style="font-weight:500;">Fish</div>
+              <div style="color:#666; font-size:14px;">$17.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Gluten Free Pet Food" data-price="19.99">
+              <div style="font-weight:500;">Gluten Free</div>
+              <div style="color:#666; font-size:14px;">$19.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Chicken Pet Food" data-price="14.99">
+              <div style="font-weight:500;">Chicken</div>
+              <div style="color:#666; font-size:14px;">$14.99</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pet Toys -->
+        <div style="margin-bottom:20px;">
+          <h4 style="margin:0 0 10px 0; color:#333;">Pet Toys</h4>
+          <div class="grid">
+            <button class="btn-product add-to-cart" data-name="Chew Toys" data-price="8.99">
+              <div style="font-weight:500;">Chew Toys</div>
+              <div style="color:#666; font-size:14px;">$8.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Soft Plushies" data-price="12.99">
+              <div style="font-weight:500;">Soft Plushies</div>
+              <div style="color:#666; font-size:14px;">$12.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Rope Toys" data-price="6.99">
+              <div style="font-weight:500;">Ropes</div>
+              <div style="color:#666; font-size:14px;">$6.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Balls" data-price="5.99">
+              <div style="font-weight:500;">Balls</div>
+              <div style="color:#666; font-size:14px;">$5.99</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pet Gear -->
+        <div>
+          <h4 style="margin:0 0 10px 0; color:#333;">Pet Gear</h4>
+          <div class="grid">
+            <button class="btn-product add-to-cart" data-name="Leashes" data-price="18.99">
+              <div style="font-weight:500;">Leashes</div>
+              <div style="color:#666; font-size:14px;">$18.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Harnesses" data-price="24.99">
+              <div style="font-weight:500;">Harnesses</div>
+              <div style="color:#666; font-size:14px;">$24.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Pet Gear" data-price="15.99">
+              <div style="font-weight:500;">Pet Gear</div>
+              <div style="color:#666; font-size:14px;">$15.99</div>
+            </button>
+            <button class="btn-product add-to-cart" data-name="Grooming Products" data-price="22.99">
+              <div style="font-weight:500;">Grooming Products</div>
+              <div style="color:#666; font-size:14px;">$22.99</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schedule a Walk -->
+    <div class="card">
+      <button class="accordion-btn" data-target="walk">
+        <div style="display:flex; align-items:center; gap:15px;">
+          <span style="font-size:24px;">🚶</span>
+          <div style="text-align:left;">
+            <div style="font-weight:bold; font-size:16px; color:#333;">Schedule a Walk</div>
+            <div style="font-size:14px; color:#666;">Professional dog walking services</div>
+          </div>
+        </div>
+        <span class="arrow" id="walkArrow">▼</span>
+      </button>
+
+      <div id="walkContent" class="accordion-content">
+        <button class="btn-product add-to-cart" data-name="30 Minute Walk" data-price="20.00" style="width:100%; margin-bottom:10px;">
+          <div style="font-weight:500; margin-bottom:5px;">30 Minute Walk</div>
+          <div style="color:#666; font-size:14px; margin-bottom:10px;">Includes cool down period, refreshing water, and bathroom break</div>
+          <div style="font-weight:bold; color:#5D5CDE;">$20.00</div>
+        </button>
+        <button class="btn-product add-to-cart" data-name="Same Day Walk" data-price="30.00" style="width:100%;">
+          <div style="font-weight:500; margin-bottom:5px;">Same Day Walk</div>
+          <div style="color:#666; font-size:14px; margin-bottom:10px;">No appointment necessary</div>
+          <div style="font-weight:bold; color:#5D5CDE;">$30.00</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Schedule Same Day Delivery -->
+    <div class="card">
+      <button class="accordion-btn" data-target="delivery">
+        <div style="display:flex; align-items:center; gap:15px;">
+          <span style="font-size:24px;">🚚</span>
+          <div style="text-align:left;">
+            <div style="font-weight:bold; font-size:16px; color:#333;">Schedule Same Day Delivery</div>
+            <div style="font-size:14px; color:#666;">Fast delivery for your pet needs</div>
+          </div>
+        </div>
+        <span class="arrow" id="deliveryArrow">▼</span>
+      </button>
+
+      <div id="deliveryContent" class="accordion-content">
+        <button class="btn-product add-to-cart" data-name="Same Day Delivery Fee" data-price="10.00" style="width:100%; margin-bottom:10px;">
+          <div style="font-weight:500; margin-bottom:5px;">Same Day Delivery</div>
+          <div style="color:#666; font-size:14px; margin-bottom:10px;">Delivery fee</div>
+          <div style="font-weight:bold; color:#5D5CDE;">$10.00</div>
+        </button>
+        <button class="btn-product add-to-cart" data-name="Heavy Item Fee" data-price="10.00" style="width:100%;">
+          <div style="font-weight:500; margin-bottom:5px;">Heavy Item Fee</div>
+          <div style="color:#666; font-size:14px; margin-bottom:10px;">For anything over 50lbs (additional fee)</div>
+          <div style="font-weight:bold; color:#5D5CDE;">$10.00</div>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal" aria-hidden="true" aria-label="Cart modal">
+    <div class="modal-sheet">
+      <div style="padding:20px; border-bottom:1px solid #ddd;" class="row">
+        <h3 style="margin:0;">Your Cart</h3>
+        <button id="closeCartBtn" class="btn-ghost" style="font-size:24px;">✖️</button>
+      </div>
+      <div id="cartItems" style="padding:20px;">
+        <p style="text-align:center; color:#666;">Your cart is empty</p>
+      </div>
+      <div style="padding:20px; border-top:1px solid #ddd;">
+        <div class="row" style="margin-bottom:20px;">
+          <span style="font-size:18px; font-weight:bold;">Total:</span>
+          <span id="cartTotal" style="font-size:18px; font-weight:bold; color:#5D5CDE;">$0.00</span>
+        </div>
+        <button id="checkoutBtn" class="button-primary">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Item added to cart!</div>
+
+  <script>
+    // --------- State ----------
+    let cart = [];
+
+    // --------- UI Helpers ----------
+    function toggleCategory(category) {
+      const content = document.getElementById(category + 'Content');
+      const arrow = document.getElementById(category + 'Arrow');
+      const isHidden = window.getComputedStyle(content).display === 'none';
+      content.style.display = isHidden ? 'block' : 'none';
+      if (arrow) arrow.classList.toggle('rotated', isHidden);
+    }
+
+    function showCart() {
+      const modal = document.getElementById('cartModal');
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeCart() {
+      const modal = document.getElementById('cartModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 2000);
+    }
+
+    // --------- Cart Logic ----------
+    function addToCart(name, price) {
+      const existingItem = cart.find(i => i.name === name);
+      if (existingItem) existingItem.quantity += 1;
+      else cart.push({ name, price, quantity: 1 });
+
+      updateCartDisplay();
+      showToast();
+    }
+
+    function updateQuantity(index, change) {
+      cart[index].quantity += change;
+      if (cart[index].quantity <= 0) cart.splice(index, 1);
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartCount = document.getElementById('cartCount');
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+
+      const totalItems = cart.reduce((s, i) => s + i.quantity, 0);
+      const totalPrice = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
+
+      if (totalItems > 0) {
+        cartCount.style.display = 'flex';
+        cartCount.textContent = totalItems;
+      } else {
+        cartCount.style.display = 'none';
+      }
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="text-align:center; color:#666;">Your cart is empty</p>';
+      } else {
+        cartItems.innerHTML = cart.map((item, index) => `
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #eee;">
+            <div>
+              <div style="font-weight:500;">${item.name}</div>
+              <div style="color:#666; font-size:14px;">$${item.price.toFixed(2)} each</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <button class="qty-btn" data-index="${index}" data-change="-1" style="width:30px; height:30px; border-radius:50%; background:#f0f0f0; border:none; cursor:pointer;">-</button>
+              <span>${item.quantity}</span>
+              <button class="qty-btn" data-index="${index}" data-change="1" style="width:30px; height:30px; border-radius:50%; background:#f0f0f0; border:none; cursor:pointer;">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      cartTotal.textContent = '$' + totalPrice.toFixed(2);
+
+      // Rebind quantity buttons after DOM update
+      document.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-index'), 10);
+          const chg = parseInt(btn.getAttribute('data-change'), 10);
+          updateQuantity(idx, chg);
+        });
+      });
+    }
+
+    function checkout() {
+      if (cart.length === 0) return;
+
+      const orderSummary = cart.map(item => `${item.quantity}x ${item.name} ($${item.price.toFixed(2)} each)`).join('\\n');
+      const total = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
+
+      if (window.confirm) {
+        window.confirm('Order Confirmed!\\n\\n' + orderSummary + '\\n\\nTotal: $' + total.toFixed(2));
+      }
+
+      cart = [];
+      updateCartDisplay();
+      closeCart();
+    }
+
+    // --------- Event Binding (no inline handlers) ----------
+    document.addEventListener('DOMContentLoaded', () => {
+      // Accordions
+      ['products','walk','delivery'].forEach(cat => {
+        const trigger = document.querySelector(`.accordion-btn[data-target="${cat}"]`);
+        if (trigger) trigger.addEventListener('click', () => toggleCategory(cat));
+      });
+
+      // Cart open/close
+      const cartBtn = document.getElementById('cartButton');
+      if (cartBtn) cartBtn.addEventListener('click', showCart);
+      const closeCartBtn = document.getElementById('closeCartBtn');
+      if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+
+      // Checkout
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
+
+      // Add-to-cart
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const name = btn.getAttribute('data-name');
+          const price = parseFloat(btn.getAttribute('data-price') || '0');
+          addToCart(name, price);
+        });
+      });
+    });
+
+    // --------- PWA Install Prompt (finished) ----------
+    let deferredPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+
+      const installBtn = document.createElement('button');
+      installBtn.textContent = 'Install app';
+      installBtn.setAttribute('aria-label', 'Install The Pet Courier');
+      installBtn.style.position = 'fixed';
+      installBtn.style.bottom = '20px';
+      installBtn.style.right = '20px';
+      installBtn.style.padding = '12px 16px';
+      installBtn.style.border = 'none';
+      installBtn.style.borderRadius = '8px';
+      installBtn.style.background = '#5D5CDE';
+      installBtn.style.color = '#fff';
+      installBtn.style.fontWeight = '700';
+      installBtn.style.cursor = 'pointer';
+      installBtn.style.zIndex = '3000';
+
+      installBtn.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        installBtn.remove();
+      });
+
+      document.body.appendChild(installBtn);
+    });
+  </script>
+</body>
 </html>        <!-- Pet Products -->
         <div style="background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             <button onclick="toggleCategory('products')" style="width: 100%; padding: 20px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
